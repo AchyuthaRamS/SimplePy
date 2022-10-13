@@ -19,3 +19,12 @@ class Solution(object):
         if carry > 0:
             curr.next = ListNode(carry)
         return head.next
+    
+        def dfs(self, candidates, target, path, res):
+        if target < 0:
+            return   #backtracking
+        if target == 0:
+            res.append(path)
+            return
+        for i in range(len(candidates)):
+            self.dfs(candidates[i:], target - candidates[i], path + [candidates[i]], res)
