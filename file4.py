@@ -15,6 +15,21 @@ class Solution(object):
             else:
                 return (max(L1, L2) + min(R1, R2)) / 2.0
 
+            
+                     res = []
+        dt = {'2':'abc','3':'def','4':'ghi','5':'jkl','6':'mno','7':'pqrs','8':'tuv','9':'wxyz'
+        }
+        def helper(index,string):
+            if index==len(digits):
+                res.append(string)
+                return True
+            for ele in (dt[digits[index]]):
+                string+=ele
+                helper(index+1,string)
+                string = string[:-1]
+        helper(0,"")
+        return res
+            
 
 if __name__ == '__main__':
     # begin
